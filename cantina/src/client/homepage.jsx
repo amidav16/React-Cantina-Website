@@ -1,7 +1,12 @@
 import React from "react";
+import logo from "../logo_cantine_aperte-900x580.jpg";
 
 const HomePage = () => {
-  return <h1>Welcome to our Cantine Website!</h1>;
+  return (
+    <div className="container">
+      <img src={logo} />
+    </div>
+  );
 };
 
 export default HomePage;

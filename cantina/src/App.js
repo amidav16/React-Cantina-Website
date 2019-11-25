@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import NotFound from "./client/common/notfound";
+import Reservation from "./client/common/reservation";
 import HomePage from "./client/homepage";
-import NotFound from "./client/notfound";
 import Navbar from "./client/navbar";
+import Menu from "./client/menu";
+import Login from "./client/login";
+import Register from "./client/register";
 import "./App.css";
 
 class App extends Component {
@@ -14,7 +18,11 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route path="/home" component={HomePage} />
+            <Route path="/reservation" component={Reservation} />
             <Route path="/not-found" component={NotFound} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/menu" component={Menu} />
             <Redirect from="/" exact to="/home" />
             <Redirect to="not-found" />
           </Switch>
