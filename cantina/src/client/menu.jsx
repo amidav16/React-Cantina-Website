@@ -1,13 +1,12 @@
 //make this component take in all components to make the menu, while also handling most functions
 
 import React, { Component } from "react";
-import { getData, getDays } from "../server/fakeMenuData";
+import { getData } from "../server/fakeMenuData";
 import MenuTable from "./menuTable";
 
 class Menu extends Component {
   state = {
-    menus: getData(),
-    days: getDays()
+    menus: getData()
   };
 
   componentDidMount() {}
@@ -23,11 +22,7 @@ class Menu extends Component {
       <React.Fragment>
         <div>
           <p>Showing {count} dishes in the menu.</p>
-          <MenuTable
-            days={this.state.days}
-            LikeButton={this.handleLike}
-            items={this.state.menus}
-          />
+          <MenuTable LikeButton={this.handleLike} items={this.state.menus} />
         </div>
       </React.Fragment>
     );

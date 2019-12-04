@@ -5,6 +5,7 @@ const MenuTable = ({ LikeButton, items }) => {
     <table className="table">
       <thead>
         <tr>
+          <th>Day</th>
           <th>Dish</th>
           <th>Price</th>
           <th>Description</th>
@@ -14,6 +15,7 @@ const MenuTable = ({ LikeButton, items }) => {
       <tbody>
         {items.map(menu => (
           <tr key={menu._id}>
+            <td>{menu.day}</td>
             <td>{menu.title}</td>
             <td>{menu.price + "$"}</td>
             <td>{menu.description}</td>
