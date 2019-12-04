@@ -45,16 +45,18 @@ const data = [
     price: 6.5,
     _id: 7,
     description: "excepturi ut quia sunt ut sequi eos ea sed quas"
-  },
-  {
-    title: "dolorem dolore est ipsam",
-    price: 13.3,
-    _id: 8,
-    description:
-      "qui sint possimus cum quaerat magni maiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae"
   }
 ];
 
+const days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
 export function getData() {
   return data;
 }

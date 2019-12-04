@@ -3,7 +3,7 @@ import Joi from "joi-browser";
 import Input from "./input";
 
 class Form extends Component {
-  state = { data: {}, errors: {} };
+  state = { data: {}, errors: {}, checked: {} };
 
   validate = () => {
     const options = { abortEarly: false };
@@ -59,6 +59,11 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
+  handleCheckbox = e => {
+    console.log(this.state.checked);
+    this.setState({ checked: e.target.checked });
+  };
+
   renderButton(label) {
     return (
       <button disabled={this.validate()} className="btn btn-primary">
@@ -67,7 +72,30 @@ class Form extends Component {
     );
   }
 
-  renderCheckbox() {}
+  renderRegisterButton(checked, label) {
+    return (
+      <button
+        disabled={checked === false || this.validate()}
+        className="btn btn-primary"
+      >
+        {label}
+      </button>
+    );
+  }
+
+  renderCheckBox(text) {
+    return (
+      <label className="m-2">
+        <input
+          type="checkbox"
+          checked={this.state.checked}
+          onChange={this.handleCheckbox}
+        />
+        <span className="m-2">{text}</span>
+      </label>
+    );
+  }
+
   renderInput(name, label, type = "text") {
     const { data, errors } = this.state;
     return (

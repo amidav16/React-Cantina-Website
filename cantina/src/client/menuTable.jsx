@@ -1,10 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 
-class MenuTable extends Component {
-  state = {};
-  render() {
-    return <h1>ups</h1>;
-  }
-}
+const MenuTable = ({ LikeButton, items }) => {
+  return (
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Dish</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        {items.map(menu => (
+          <tr key={menu._id}>
+            <td>{menu.title}</td>
+            <td>{menu.price + "$"}</td>
+            <td>{menu.description}</td>
+            <td>
+              <button
+                onClick={() => {
+                  LikeButton();
+                }}
+                className="btn btn-primary btn-sm"
+              >
+                Like
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 export default MenuTable;
